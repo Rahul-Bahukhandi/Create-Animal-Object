@@ -13,10 +13,10 @@
 
 // Step 1: Create Animal class
 class Animal {
-  constructor(name, color, age) {
-    this.AnimalName = name;
-    this.AnimalColor = color;
-    this.AnimalAge = age;
+  constructor(AnimalName, AnimalColor, AnimalAge) {
+    this.AnimalName = AnimalName;
+    this.AnimalColor = AnimalColor;
+    this.AnimalAge = AnimalAge;
   }
 
   describe() {
