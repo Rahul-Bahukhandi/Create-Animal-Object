@@ -1,3 +1,16 @@
+/**
+ * 1. Make a Class
+ * Create a class "Animal" with properties: "AnimalName", "AnimalColor", "AnimalAge". Add a method "describe() => returns text like:" "Dog is brown and 3 years old."  
+ * 2. Build HTML Form
+ * three-input fields => Name, Color, Age
+ * one-button => "Create Animal"
+ * 3. Connect with JS(DOM)
+ * on button click:
+ * Take values from inputs Create new Animal object showDetails + describe() output on the page.
+ * Extra(optional): Save all animals in an array and display them in a list.
+ * Focus: Learn **Classes, Objects, DOM, Events.
+ */
+
 // Step 1: Create Animal class
 class Animal {
   constructor(name, color, age) {
