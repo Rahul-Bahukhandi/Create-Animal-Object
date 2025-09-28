@@ -1,6 +1,6 @@
 /**
  * 1. Make a Class
- * Create a class "Animal" with properties: "AnimalName", "AnimalColor", "AnimalAge". Add a method "describe() => returns text like:" "Dog is brown and 3 years old."  
+ * Create a class "Animal" with properties: "AnimalName", "AnimalColor", "AnimalAge". Add a method "describe() => returns text like:" "Dog is brown and 3 years old."
  * 2. Build HTML Form
  * three-input fields => Name, Color, Age
  * one-button => "Create Animal"
@@ -11,7 +11,6 @@
  * Focus: Learn **Classes, Objects, DOM, Events.
  */
 
-// Step 1: Create Animal class
 class Animal {
   constructor(name, color, age) {
     this.AnimalName = name;
@@ -24,37 +23,34 @@ class Animal {
   }
 }
 
-// Step 4 (optional): Store all animals
-const animalList = [];
+const animalsArray = [];
 
-
-// Step 3: Handle button click
-document.getElementById("createBtn").addEventListener("click", () => {
+document.getElementById("createBtn").addEventListener("click", function () {
   const name = document.getElementById("animalName").value.trim();
   const color = document.getElementById("animalColor").value.trim();
   const age = document.getElementById("animalAge").value.trim();
 
-  if (!name || !color || !age) {
-    alert("Please fill in all fields.");
-    return;
+  if (name && color && age) {
+    const animal = new Animal(name, color, age);
+    animalsArray.push(animal);
+
+    // Output section ko visible karo
+    document.getElementById("outputSection").style.display = "block";
+
+    document.getElementById("output").textContent = animal.describe();
+
+    const list = document.getElementById("animalList");
+    list.innerHTML = "";
+    animalsArray.forEach((a) => {
+      const li = document.createElement("li");
+      li.textContent = a.describe();
+      list.appendChild(li);
+    });
+
+    document.getElementById("animalName").value = "";
+    document.getElementById("animalColor").value = "";
+    document.getElementById("animalAge").value = "";
+  } else {
+    alert("Please fill all fields!");
   }
-
-  // Create new Animal object
-  const animal = new Animal(name, color, age);
-
-  // Store in list (optional)
-  animalList.push(animal);
-  console.log(animalList);
-
-  // Output to page
-  const output = document.getElementById("output");
-  const para = document.createElement("p");
-  para.className = "animal-item";
-  para.textContent = animal.describe();
-  output.appendChild(para);
-
-  // Clear inputs
-  document.getElementById("animalName").value = "";
-  document.getElementById("animalColor").value = "";
-  document.getElementById("animalAge").value = "";
 });

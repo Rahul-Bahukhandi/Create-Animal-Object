@@ -8,29 +8,31 @@
 </head>
 
 <body>
+    <div class="container">
+        <h2>Create Animal</h2>
 
-    <h2>Create Animal Object</h2>
+        <!-- Form -->
+        <label for="animalName">Name : </label>
+        <input type="text" id="animalName" placeholder="e.g. Dog" required />
+        <br>
+        <label for="animalColor">Color : </label>
+        <input type="text" id="animalColor" placeholder="e.g. Brown" required />
+        <br>
+        <label for="animalAge">Age : </label>
+        <input type="number" id="animalAge" placeholder="e.g. 3" required />
+        <br>
+        <button id="createBtn">Create Animal</button>
 
-    <label>
-        Name :
-        <input type="text" id="animalName" placeholder="e.g. Dog" />
-    </label>
-    <br>
-    <label>
-        Color :
-        <input type="text" id="animalColor" placeholder="e.g. Brown" />
-    </label>
-    <br>
-    <label>
-        Age :
-        <input type="number" id="animalAge" placeholder="e.g. 3" />
-    </label>
-    <br>
-    <button id="createBtn">Create Animal</button>
+        <!-- Output Section -->
+        <div id="outputSection">
+            <h3>Animals Object:</h3>
+            <div id="output"></div>
+            <h3>Animal List</h3>
+            <ul id="animalList"></ul>
+        </div>
+    </div>
 
-    <div id="output"></div>
-
-    <script src="script.js"></script>
+   <script src="script.js"></script>
 </body>
 
 </html>
